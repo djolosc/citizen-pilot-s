@@ -14,7 +14,7 @@ export class UsersService {
     // @ts-ignore
     return await this.userRepository.create<User>(user);
   }
-
+  
   async findOneByEmail(email: string): Promise<User> {
     return await this.userRepository.findOne<User>({ where: { email } });
   }
