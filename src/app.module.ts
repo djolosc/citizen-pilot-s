@@ -12,7 +12,10 @@ import { ContactsModule } from './modules/contacts/contacts.module';
 import { ProjectsModule } from './modules/projects/projects.module';
 import { EmployeeModule } from './modules/employees/employee.module';
 import { NewsModule } from './modules/news/news.module';
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5129c1fb8f7a3e8f4ca16bbdd5c3aaa6cc844d2
 
 @Module({
   imports: [
