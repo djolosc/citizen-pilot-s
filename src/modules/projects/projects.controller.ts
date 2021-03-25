@@ -35,10 +35,10 @@ export class ProjectsController {
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Put(':id')
-  async update(@Param('id') id: number, @Body() project: ProjectDto, @Request() req): Promise<ProjectEntity> {
+  @Put(':id/:title')
+  async update(@Param('title') title: string, @Param('id') id: number, @Request() req): Promise<ProjectEntity> {
     // get the number of row affected and the updated post
-    const { numberOfAffectedRows, updatedProject } = await this.projectService.update(id, project, req.user.id);
+    const { numberOfAffectedRows, updatedProject } = await this.projectService.update(title, id, req.user.id);
 
     // if the number of row affected is zero,
     // it means the post doesn't exist in our db
@@ -54,7 +54,7 @@ export class ProjectsController {
   @Delete(':id')
   async remove(@Param('id') id: number, @Request() req) {
     // delete the post with this id
-    const deleted = await this.projectService.delete(id, req.employee.id);
+    const deleted = await this.projectService.delete(id, req.user.id);
 
     // if the number of row affected is zero,
     // then the post doesn't exist in our db

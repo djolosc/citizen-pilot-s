@@ -15,6 +15,14 @@ export class UsersService {
     return await this.userRepository.create<User>(user);
   }
   
+  async findAll(): Promise<User[]> {
+    return await this.userRepository.findAll<User>({
+      include:[{model: User}]
+    });
+  }
+
+
+
   async findOneByEmail(email: string): Promise<User> {
     console.log('Users Service', email);
     return await this.userRepository.findOne<User>({ where: { email } });
@@ -23,4 +31,6 @@ export class UsersService {
   async findOneById(id: number): Promise<User> {
     return await this.userRepository.findOne<User>({ where: { id } });
   }
+
+
 }

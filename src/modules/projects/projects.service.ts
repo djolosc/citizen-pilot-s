@@ -31,8 +31,11 @@ export class ProjectsService {
     return await this.projectRepository.destroy({ where: { id, employeeId } });
   }
 
-  async update(id, data, employeeId) {
-    const [numberOfAffectedRows, [updatedProject]] = await this.projectRepository.update({ ...data }, { where: { id, employeeId }, returning: true });
+  async update(title, id, employeeId) {
+    console.log("HERE IS TITLE", title);
+    console.log("HERE IS ID", id);
+    console.log("HERE IS EMPLOYEEID", employeeId);
+    const [numberOfAffectedRows, [updatedProject]] = await this.projectRepository.update({title: title}, { where: { id, employeeId }, returning: true });
 
     return { numberOfAffectedRows, updatedProject };
   }
