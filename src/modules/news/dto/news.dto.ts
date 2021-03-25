@@ -10,6 +10,9 @@ export class NewsDto {
     readonly shortDescription: string;
 
     @IsNotEmpty()
+    readonly category: string;
+
+    @IsNotEmpty()
     @MinLength(10)
     readonly longDescription: string;
 

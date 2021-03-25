@@ -31,14 +31,14 @@ export class ProjectsController {
   @Post()
   async create(@Body() project: ProjectDto, @Request() req): Promise<ProjectEntity> {
     // create a new project and return the newly created project
-    return await this.projectService.create(project, req.employee.id)
+    return await this.projectService.create(project, req.user.id)
   }
 
   @UseGuards(AuthGuard('jwt'))
   @Put(':id')
   async update(@Param('id') id: number, @Body() project: ProjectDto, @Request() req): Promise<ProjectEntity> {
     // get the number of row affected and the updated post
-    const { numberOfAffectedRows, updatedProject } = await this.projectService.update(id, project, req.employee.id);
+    const { numberOfAffectedRows, updatedProject } = await this.projectService.update(id, project, req.user.id);
 
     // if the number of row affected is zero,
     // it means the post doesn't exist in our db

@@ -10,6 +10,15 @@ export class News extends Model<News> {
   title: string;
 
   @Column({
+    type: DataType.STRING,
+    allowNull: false,
+    values: [
+      'General', 'Reminders', 'Weather', 'Transport', 'Road'
+    ]
+  })
+  category: string;
+
+  @Column({
       type: DataType.TEXT,
       allowNull: false,
   })

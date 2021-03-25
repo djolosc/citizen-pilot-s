@@ -15,6 +15,6 @@ export class ProjectDto {
 
   readonly image: string;
 
-  @IsNotEmpty()
-  readonly votes: string;
+  // @IsNotEmpty()
+  // readonly votes: string;
 }
