@@ -14,5 +14,5 @@ export class UserDto {
   @IsNotEmpty()
   @MinLength(6)
   readonly password: string;
-
+  //add an array!
 }

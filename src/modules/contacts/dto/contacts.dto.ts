@@ -9,7 +9,7 @@ export class ContactsDto {
   readonly phone: number;
 
   @IsNotEmpty()
-  @IsEmail()
+  // @IsEmail()
   readonly email: string;
 
   @IsNotEmpty()

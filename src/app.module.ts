@@ -12,10 +12,7 @@ import { ContactsModule } from './modules/contacts/contacts.module';
 import { ProjectsModule } from './modules/projects/projects.module';
 import { EmployeeModule } from './modules/employees/employee.module';
 import { NewsModule } from './modules/news/news.module';
-<<<<<<< HEAD
-=======
-import {AuthModuleEM} from './modules/emAUTH/auth.module';
->>>>>>> 4b8fa52c07e50c4505cdffde648cdf7a12185fd1
+
 
 @Module({
   imports: [
