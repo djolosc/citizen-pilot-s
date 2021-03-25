@@ -24,7 +24,6 @@ export class UsersService {
 
 
   async findOneByEmail(email: string): Promise<User> {
-    console.log('Users Service', email);
     return await this.userRepository.findOne<User>({ where: { email } });
   }
 
@@ -32,5 +31,20 @@ export class UsersService {
     return await this.userRepository.findOne<User>({ where: { id } });
   }
 
+<<<<<<< HEAD
+=======
+  // Add a favourite
+  // async update(id, data) {
+  //   console.log('data: ', data, 'id', id)
+  //   const [numberOfAffectedRows, [updatedFavourites]] = await this.userRepository.update(
+  //     { favourites: id }, { where: { data }, returning: true }
+  //   );
+  //   return { numberOfAffectedRows, updatedFavourites };
+  // }
+
+  // Delete a favourite
+
+  // Add voted
+>>>>>>> 4afa14f39ecac56a4aae98f341945af711fc5be3
 
 }
